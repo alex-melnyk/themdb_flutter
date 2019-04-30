@@ -22,9 +22,13 @@ class MovieCard extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         child: Column(
           children: <Widget>[
-            ListTile(title: Text(movie.original_title)),
+            ListTile(
+                title: Text(
+              movie.original_title,
+              style: TextStyle(fontWeight: FontWeight.w500),
+            )),
             Container(
-              height: 400,
+              height: 500,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage('$IMAGES_BASE_URL${movie.poster_path}'),

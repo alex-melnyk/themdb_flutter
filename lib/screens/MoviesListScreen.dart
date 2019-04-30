@@ -33,12 +33,12 @@ class _MoviesListScreenState extends State<MoviesListScreen> {
     return RefreshIndicator(
         child: StreamBuilder(
           stream: BlocProvider.of<ApplicationBloc>(context).movieBloc.outMovies,
-          builder: (ctx, AsyncSnapshot<List<Movie>> sn) {
-            if (sn.data == null || sn.data.isEmpty) {
+          builder: (ctx, AsyncSnapshot<List<Movie>> snapshot) {
+            if (!snapshot.hasData) {
               return Center(child: CircularProgressIndicator());
             }
 
-            return _buildMoviesList(sn.data);
+            return _buildMoviesList(snapshot.data);
           },
         ),
         onRefresh: _updateMoviesList);

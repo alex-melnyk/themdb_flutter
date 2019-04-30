@@ -14,6 +14,7 @@ class MovieDetails {
   final String poster_path;
   final bool adult;
   final int budget;
+  final double vote_average;
   final List<MovieGenre> genres;
 
   MovieDetails.fromMap(Map<String, Object> json)
@@ -23,5 +24,6 @@ class MovieDetails {
         poster_path = json['poster_path'],
         adult = json['adult'],
         budget = json['budget'],
+        vote_average = json['vote_average'],
         genres = (json['genres'] as List).map((v) => MovieGenre.fromMap(v)).toList();
 }

@@ -6,7 +6,7 @@ import 'package:my_app/models/MovieDetails.dart';
 
 const API_KEY = '3678e250ddb15c93ca4af8be76d6b0f6';
 const API_BASE_URL = 'https://api.themoviedb.org/3';
-const IMAGES_BASE_URL = 'https://image.tmdb.org/t/p/w500/';
+const IMAGES_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 Future<List<Movie>> fetchMovies(String category) async {
   final resp = await http.get('$API_BASE_URL/movie/$category?api_key=$API_KEY');
